@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Stranica</title>
+        <meta charset="UTF-8">
+
+        <!--
+        <style>
+            div    /* Ovo je selektor na sve elemente div */            
+            .container /* Sleektor na sve elemente koji pripadaju klasi container */
+            #footer /* Ovo je selektor na id footer */
+            
+            body{
+                background: red;
+            }
+        </style>
+        -->
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+
+    <body style="font-family: 'Arial';">
+        <h1>Display: inline-block</h1>
+        <div class="container" id="omotac">
+            <div id="header"></div>
+            <div id="content"></div><div id="aside"></div>
+            <div id="footer"></div>
+        </div>
+        <h1>Position:</h1>
+        <p>Kada dodelimo elementu position atribut, dalje mozemo da ga
+            pozicioniramo uz pomoc top, left, right, bottom
+            svojstava.
+        </p>
+        <ul>
+            <li>static
+                <p>Svi elementi su po default-u pozicionirani kao 
+                    static. Na njih ne uticu top, left, right, bottom
+                    svojstva;
+                </p>
+                <div id="static">Ovaj div element ima static position</div>
+            </li>
+            <li>relative
+                <p>Podesavanjem top/left/right/bottom-a element ce se
+                    pomeriti u odnosu na normalnu poziciju, ali ostali
+                    sadrzaj se NECE pomeriti da popuni nastale rupe.
+                </p>
+                <div id="relative">Ovaj div element ima relative position</div>
+            </li>
+            <li>fixed
+                <p>Fixed pozicija se podesava u odnosu na viewport,
+                    to znaci da ostaje na istom mestu iako skrolujete
+                    stranicu.
+                    Fixed element ne ostavlja praznu rupu na mestu gde bi trebao
+                    da se nalazi.
+                </p>
+                <div id="fixed">Ovaj element je ima fixed position</div>
+            </li>
+            <li>absolute
+                <p>Absolute pozicija se podesava u odnosu na prvog 
+                    pretka koji nije staticki pozicioniran, ako
+                    takav element ne postoji, pozicionira se u odnosu
+                    na body.
+                    Prazna rupa koju ostavlja element se popunjava.
+                </p>
+
+                <div class="relative">
+                    position: relative;
+                    <div id="absolute"> 
+                        position: absolute;
+                    </div>
+                    <p>
+                        Ovo je paragraf posle abs diva
+                    </p>
+                </div>
+            </li>
+            <li>sticky
+                <p>
+                    Sticky element je pozicioniran relativno sve
+                    dok ne krene da se skroluje kada postaje 
+                    fixed pozicioniran.
+                </p>
+                <div id="sticky">Pratim te</div>
+                <div id="prostor"></div>
+
+            </li>
+        </ul>
+        
+    </body>
+</html>

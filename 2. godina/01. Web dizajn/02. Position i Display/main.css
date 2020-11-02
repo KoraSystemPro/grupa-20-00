@@ -1,0 +1,99 @@
+/*    
+    <div class="container" id="omotac">
+            <div id="header"></div>
+            <div id="content"></div>
+            <div id="aside"></div>
+            <div id="footer"></div>
+        </div>
+*/
+#omotac{
+    background-color: salmon;
+    border: 1px solid black;
+    width: 500px;
+    height: 600px;
+}
+#header{
+    background-color: darkgreen;
+    width: 500px;
+    height: 100px;
+}
+#content{
+    background-color: darkviolet;
+    width: 350px;
+    height: 400px;
+
+    display: inline-block;
+}
+#aside{
+    background-color: darkred;
+    width: 150px;
+    height: 400px;
+
+    display: inline-block;
+}
+#footer{
+    background-color: darkorange;
+    width: 500px;
+    height: 100px;
+}
+
+
+/* --------------------------------- */
+
+body{
+    height: 1000px;
+}
+
+#static{
+    position: static;
+    border: 3px solid darkgreen;
+}
+
+#relative{
+    position: relative;
+    left: 50px;
+    bottom: 10px;
+    border: 3px solid darkgreen;
+}
+
+#fixed{
+    position: fixed;
+    border: 3px solid darkgreen;
+    top: 30px;
+    left: 100px;
+}
+
+.relative{
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid darkgreen;
+}
+
+#absolute{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    border: 3px solid darkgreen;
+
+    top: 80px;
+    right: 0px;
+}
+
+#sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+    background-color: lightgreen;
+    border: 3px solid darkgreen;
+}
+
+body{
+    height: 3000px;
+}
+
+#prostor{
+    padding-bottom: 500px;
+    background-color: lightpink;
+}
