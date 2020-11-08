@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pekara</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="baguette">
+          <div class="circle"></div>
+          <img src="./hleb.png" alt="baguette" />
+        </div>
+        <div class="info">
+          <h1 class="title">Baguette</h1>
+          <h3>PORUČI NAŠ NAJBOLJI BAGET, DANAS!</h3>
+          <div class="sizes">
+            <button>40cm</button>
+            <button id="active">50cm</button>
+            <button>60cm</button>
+            <button>70cm</button>
+          </div>
+          <div class="purchase">
+            <button onclick="vrati_nausmicnu_vrednost()">Purchase</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button onclick="vrati_nausmicnu_vrednost()">Purchase</button>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

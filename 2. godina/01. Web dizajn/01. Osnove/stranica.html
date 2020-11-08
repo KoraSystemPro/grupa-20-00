@@ -1,0 +1,265 @@
+﻿<html>
+  <head>
+    <title>Zudi Djo</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        background-color: lightblue;
+      }
+      th {
+        background-color: grey;
+      }
+
+      .crven {
+        background-color: red;
+      }
+
+      .prelaz:hover {
+        background-color: yellow;
+        background-image: url(zmaj.jpg);
+        background-size: contain;
+      }
+
+      #zid {
+        border-radius: 0;
+        text-decoration: underline;
+        border: 15px outset;
+      }
+      #zid:hover {
+        border-radius: 0;
+        border: 15px inset;
+      }
+
+      p {
+        font-family: "Comic Sans MS", Courier, monospace;
+        border-left: 4px solid green;
+        border-top: 3px dotted blue;
+        border-bottom: 3px dashed yellow;
+        border-right: 6px groove purple;
+
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20%;
+        padding: 15px;
+      }
+
+      .ime {
+        color: yellow;
+        text-decoration: underline;
+        font-weight: bold;
+        font-style: italic;
+        font-family: "Consolas", Courier, monospace;
+      }
+      img.profilna {
+        border: 2px groove blue;
+        border-radius: 50%;
+      }
+
+      #omotac {
+        background-color: salmon;
+        border: 1px solid black;
+        width: 400px;
+        height: 500px;
+
+        padding: 0px;
+      }
+      #header {
+        background-color: darkgreen;
+        width: 100%;
+        height: 100px;
+      }
+
+      #aside {
+        background-color: darkgoldenrod;
+        width: 100px;
+        height: 300px;
+        display: inline-block;
+      }
+
+      #content {
+        background-color: darkred;
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+      }
+
+      #footer {
+        background-color: darkblue;
+        width: 400px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <font size="20px" color="maroon">Ovo je prva rečenica.</font>
+    <br />
+    <pre>
+Danas 
+
+	je 
+
+		subota.
+		
+			d(^_^)b
+</pre
+    >
+
+    <!-- komentar -->
+
+    <p>
+      <b>Sutra</b> je <i>nedelja</i>, <u>drugi dan</u>
+      <font face="Vladimir Script">Sistema</font>.
+    </p>
+
+    <ol>
+      <!-- ordered list -->
+      <li class="crven">Prvi</li>
+      <!--list item-->
+      <li>Drugi</li>
+      <li>Treci</li>
+    </ol>
+
+    <ul>
+      <!-- unordered list -->
+      <li>Jabuka</li>
+      <li>Kruska</li>
+    </ul>
+
+    <a href="https://www.google.com/">Link Google</a>
+
+    <hr color="red" width="50%" />
+    <img
+      src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    />
+    <br />
+    <center>
+      <img src="zmaj.jpg" width="150px" class="profilna" />
+    </center>
+    <hr color="green" />
+    H<sub>2</sub>O i 100 m<sup>2</sup>
+
+    <h1>Naslov prvog nivoa</h1>
+    <h2>Naslov drugog nivoa</h2>
+    <h3>Naslov 3. nivoa</h3>
+    ...
+    <h6>Naslov 6. nivoa</h6>
+
+    <table
+      bordercolor="#ff00FF"
+      border="3px"
+      width="100px"
+      height="120px"
+      cellspacing="10"
+      cellpadding="15"
+      align="center"
+    >
+      <tr>
+        <td bgcolor="red">A</td>
+        <td bgcolor="orange">5</td>
+        <td bgcolor="blue">120</td>
+      </tr>
+      <tr>
+        <td bgcolor="green">k</td>
+        <td bgcolor="pink">*</td>
+        <td bgcolor="maroon">tu</td>
+      </tr>
+    </table>
+
+    <br />
+    <table border="2px">
+      <caption>
+        Raspored casova
+      </caption>
+      <tr>
+        <th>ponedeljak</th>
+        <th>utorak</th>
+        <th>sreda</th>
+        <th>cetvrtak</th>
+      </tr>
+      <tr>
+        <td>matematika</td>
+        <td>srpski jezik</td>
+        <td>istorija</td>
+        <td>biologija</td>
+      </tr>
+      <tr>
+        <td>srpski jezik</td>
+        <td>matematika</td>
+
+        <td>fizicko</td>
+        <td>hemija</td>
+      </tr>
+      <tr>
+        <td>likovno</td>
+        <td>matematika</td>
+        <td>fizika</td>
+        <td>hemija</td>
+      </tr>
+    </table>
+
+    <br />
+    <table bordercolor="#ff00FF" border="3px" width="100px" height="120px">
+      <tr>
+        <td colspan="2"></td>
+        <td rowspan="2"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#ff0066"></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <a href="https://www.google.com/" target="_new"> Link Google</a>
+
+    <table border="2" width="200px" height="200px">
+      <tr>
+        <td rowspan="4" class="crven"></td>
+        <td colspan="4" class="prelaz"></td>
+        <!--   <td></td>
+              <td></td>
+              <td></td>-->
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td rowspan="2"></td>
+
+        <td rowspan="4" class="crven"></td>
+      </tr>
+      <tr>
+        <td rowspan="2"></td>
+        <td class="prelaz"></td>
+
+        <!--      <td></td>-->
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+
+        <!--      <td></td>-->
+      </tr>
+      <tr>
+        <td colspan="4" class="prelaz"></td>
+      </tr>
+    </table>
+
+    <hr color="red" />
+    <p>
+      Danas je prva nedelja u oktobru. <span class="ime">Strahinja</span> ce
+      biti prvi put izbacen napolje ako on to bude trazio, zar ne?! :)
+      <br />
+      Strahinja je dobio novi nadimak - Putin.
+      <br />
+      Zapravo on je ovog casa bio zamalo dobar.
+    </p>
+
+    <p id="zid">
+      Neka je ovo nas zid!
+    </p>
+
+    <div id="omotac">
+      <div id="header"></div>
+      <div id="aside"></div><div id="content"></div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 55em;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 30px;
+  height: 100%;
+  width: 35em;
+  padding: 0em 5em;
+  box-shadow: 10px 20px 30px black;
+  z-index: -1;
+}
+
+.circle {
+  width: 15em;
+  height: 15em;
+  background: lightgreen;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.baguette {
+  min-height: 20em;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.baguette img {
+  width: 23em;
+  height: 15em;
+  z-index: 0;
+  transform: rotate(-30deg);
+}
+
+.info h1 {
+  font-size: 3em;
+}
+
+.info h3 {
+  font-size: 1.4em;
+  padding: 2em 0em;
+
+  color: #606060;
+  font-weight: lighter;
+}
+
+.sizes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sizes button {
+  padding: 0.5em 2em;
+  background: none;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button#active {
+  background: yellow;
+  color: black;
+}
+
+.purchase {
+  margin-top: 5em;
+}
+
+.purchase button {
+  width: 100%;
+  padding: 1em 0;
+  background: yellow;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bolder;
+}

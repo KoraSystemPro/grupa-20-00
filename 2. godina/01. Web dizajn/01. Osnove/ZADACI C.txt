@@ -1,0 +1,9 @@
+1. Niz, ucitavamo n kao dimenziju koliko ce nas niz imati elementa. Potom, unosimo u niz toliko elemenata.
+	a) odredimo minimalni broj u nizu
+	b) sabrati sve elemente niza
+	c) 
+	d)
+
+2. 	a) Unosimo dva broja, odrediti minimum bez upotrebe IF-a i pomocne ugradjene funkcije.
+	b) Isto kao pod a) samo za tri broja.
+	c) Razmena dva broja.
