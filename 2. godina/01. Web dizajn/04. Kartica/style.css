@@ -4,6 +4,108 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  transform-style: preserve-3d;
+  
+  min-height: 50rem;
+  width: 35rem;
+  border-radius: 30px;
+  padding: 0rem 5rem;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.circle{
+  width: 15rem;
+  height: 15rem;
+  background: lightgreen;
+  position: absolute;
+  
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.baguette{
+  min-height: 27rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.baguette img{
+  width: 27rem;
+  z-index: 2;
+}
+
+.info h1{
+  font-size: 3rem;
+}
+
+.info h3{
+  font-size: 1.3rem;
+  padding: 2rem 0rem;
+  color: #585858;
+  font-weight: lighter;
+
+}
+
+.sizes{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sizes button{
+  padding: 0.5rem 1.5rem;
+  background: none;
+  border: none;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #585858;
+}
+
+button#active{
+  background: yellow;
+  color: black;
+}
+
+.purchase{
+  margin-top: 5rem;
+}
+
+.purchase button{
+  width: 100%;
+  padding: 1em 0;
+  background: yellow;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bolder;
+}
+
+
+/* * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -12,7 +114,6 @@ body {
 }
 
 .container {
-  height: 55em;
   width: 50%;
   display: flex;
   justify-content: center;
@@ -92,12 +193,4 @@ button#active {
   margin-top: 5em;
 }
 
-.purchase button {
-  width: 100%;
-  padding: 1em 0;
-  background: yellow;
-  border: none;
-  cursor: pointer;
-  border-radius: 30px;
-  font-weight: bolder;
-}
+*/
