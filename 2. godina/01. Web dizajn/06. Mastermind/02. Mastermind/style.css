@@ -28,7 +28,7 @@ button{
 .dgm_k, .dgm_p {
     width: 48px;
     height: 48px;
-    background: darkgray;
+    background: #777777;
     border: solid 1px black;
     border-radius: 50%;
     margin: 0 5px 0 0;
@@ -36,4 +36,14 @@ button{
 
 .dgm_p:hover{
     filter: brightness(130%);
+}
+
+
+.sakriven{
+    /* visibility: hidden;  Sakriva element ali i dalje zauzima mesto na stanici*/
+    display: none;
+}
+
+#sakriven_red{
+    display: none;
 }
