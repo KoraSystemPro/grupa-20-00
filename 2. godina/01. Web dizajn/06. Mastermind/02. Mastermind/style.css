@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    font-family: Inconsolata, Consolas, serif;
+    font-size: 18pt;
+
+}
+
+body{
+    padding: 10px 0 0 10px; /* gore desno dole levo */
+}
+
+button{
+    display: block;
+    margin: 15px 0px;   /* gore/dole levo/desno */
+}
+
+.red_dugmadi{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    width: 250px;
+    height: 50px;
+    margin: 0 0 10px 0;
+}
+
+.dgm_k, .dgm_p {
+    width: 48px;
+    height: 48px;
+    background: darkgray;
+    border: solid 1px black;
+    border-radius: 50%;
+    margin: 0 5px 0 0;
+}
+
+.dgm_p:hover{
+    filter: brightness(130%);
+}
