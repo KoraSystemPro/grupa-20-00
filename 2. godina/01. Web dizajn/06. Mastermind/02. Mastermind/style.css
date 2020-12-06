@@ -12,6 +12,7 @@ body{
 button{
     display: block;
     margin: 15px 0px;   /* gore/dole levo/desno */
+    
 }
 
 .red_dugmadi{
@@ -45,5 +46,9 @@ button{
 }
 
 #sakriven_red{
+    display: none;
+}
+
+#oceni{
     display: none;
 }

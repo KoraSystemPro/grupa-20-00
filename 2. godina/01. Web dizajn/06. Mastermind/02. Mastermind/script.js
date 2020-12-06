@@ -2,9 +2,12 @@ let kombinacija = [0, 0, 0, 0];
 let pokusaj = [0, 0, 0, 0];
 let crni = 0;
 let beli = 0;
+let niz_crnih = [0, 0, 0, 0];
 let prebrojavanje = [0, 0, 0, 0, 0, 0];
 //                   1  2  3  4  5  6
-let niz_crnih = [0, 0, 0, 0];
+
+let br_pokusaja = 0;
+let max_br_pokusaja = 6;
 
 let dugme_1 = document.getElementById("dgm_p1");
 let dugme_2 = document.getElementById("dgm_p2");
@@ -54,6 +57,7 @@ function promena(tip, k){
 }
 
 function oceni(kombinacija, pokusaj) {
+  br_pokusaja++;
   crni = 0; // Dobar broj, dobro mesto
   beli = 0; // Dobar broj
   niz_crnih = [0, 0, 0, 0];
@@ -82,10 +86,18 @@ function oceni(kombinacija, pokusaj) {
 
   // Dobitni pogodak, pokazuje resenu kombinaciju
   if(crni == 4){
+    document.getElementById("oceni").style.display = "none";
+    document.getElementById("nova-kombinacija").style.display = "block";
     document.getElementById("sakriven_red").style.display = "flex";
   }
 
-  console.log("Kombinacija: " + kombinacija + "\n" + "Pokusaj: " + pokusaj);
+  // Skidam dugme kada se premasi dozvoljeni broj pokusaja
+  if(br_pokusaja >= max_br_pokusaja){
+    document.getElementById("oceni").style.display = "none";
+    document.getElementById("nova-kombinacija").style.display = "block";
+  }
+  
+  console.log("Kombinacija:\t" + kombinacija + "\nPokusaj:\t\t" + pokusaj + "\nBr pokusaja:\t" + br_pokusaja + "\nPreostali pokusaji:\t" + (max_br_pokusaja-br_pokusaja));
 
 
   ispisi();
@@ -103,13 +115,19 @@ function ispisi() {
     document.getElementById("pokusaj").innerHTML += pokusaj[i];
   }
 
-  // Crni i Beli
+  // Preostali broj pokusaja, Crni i Beli pogotci 
+  document.getElementById("preostali_pokusaji").innerHTML = "Preostali broj pokusaja: " + (max_br_pokusaja-br_pokusaja);
   document.getElementById("crni").innerHTML = "Crni: " + crni;
   document.getElementById("beli").innerHTML = "Beli: " + beli;
 }
 
 
 function novaKombinacija() {
+  // Resetjemo broj pokusaja kada god pocinje nova igra
+  br_pokusaja = 0;
+  // Sakrivamo dugme NOVA KOMBINACIJA i pokazujem dugme OCENJIVANJE
+  document.getElementById("nova-kombinacija").style.display = "none";
+  document.getElementById("oceni").style.display = "block";
   // Pravi novu kombinaciju i sakriva prethodnu dobitnu
   document.getElementById("sakriven_red").style.display = "none";
   for (i = 1; i < 5; i++){
@@ -120,6 +138,8 @@ function novaKombinacija() {
     kombinacija[i] = Math.floor(((Math.random() * 1000) % 6) + 1);
     promena("k", i+1);
   }
+
+  console.log("Nova kombinacija: " + kombinacija + "\n--------------------------");
 }
 
 // Stavljamo event listener na dugme
