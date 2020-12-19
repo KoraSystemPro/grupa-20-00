@@ -5,9 +5,13 @@ let beli = 0;
 let niz_crnih = [0, 0, 0, 0];
 let prebrojavanje = [0, 0, 0, 0, 0, 0];
 //                   1  2  3  4  5  6
-
 let br_pokusaja = 0;
 let max_br_pokusaja = 6;
+
+// Postavljamo pocetno stanje pri ucitavanju js-a
+nacrtajPolja();
+ispisi();
+
 
 let dugme_1 = document.getElementById("dgm_p1");
 let dugme_2 = document.getElementById("dgm_p2");
@@ -121,10 +125,48 @@ function ispisi() {
   document.getElementById("beli").innerHTML = "Beli: " + beli;
 }
 
+function nacrtajPolja(){
+  let div_tabela = document.getElementById("tabela");
+
+  // Pravi 6 redova
+  for(let i = 0; i < max_br_pokusaja; i++){
+    // Kreiramo red
+    let div_red = document.createElement("div");
+    div_red.classList.add("red", "flex-red");
+
+    // Kreiramo decu od reda
+    let div_pokusaj = document.createElement("div");
+    div_pokusaj.classList.add("pokusaj", "flex-red");
+
+    let div_resenje = document.createElement("div");
+    div_resenje.classList.add("resenje", "flex-red");
+
+    // Sada dodajemo polja deci od reda
+    for(let j = 0; j < 4; j++){
+      // Kreira polja od pokusaja i dodaje ih na div_pokusaj
+      let div_pokusaj_polje = document.createElement("div");
+      div_pokusaj_polje.classList.add("pokusaj-polje");
+      div_pokusaj.appendChild(div_pokusaj_polje);
+
+      // Kreira polja od resenja i dodaje ih na div_resenje
+      let div_resenje_polje = document.createElement("div");
+      div_resenje_polje.classList.add("resenje-polje");
+      div_resenje.appendChild(div_resenje_polje);
+    }
+    // Nakon sto smo kreirali div_pokusaj i div_resenje, dodajemo ih kao decu na div_red
+    div_red.appendChild(div_pokusaj);
+    div_red.appendChild(div_resenje);
+    // Dodajemo red na tabelu
+    div_tabela.appendChild(div_red);
+  }
+}
+
 
 function novaKombinacija() {
-  // Resetjemo broj pokusaja kada god pocinje nova igra
+  // Resetjemo broj pokusaja kada god pocinje nova igra, kao i broj crnih i belih pogodaka
   br_pokusaja = 0;
+  crni = 0;
+  beli = 0;
   // Sakrivamo dugme NOVA KOMBINACIJA i pokazujem dugme OCENJIVANJE
   document.getElementById("nova-kombinacija").style.display = "none";
   document.getElementById("oceni").style.display = "block";
@@ -140,6 +182,7 @@ function novaKombinacija() {
   }
 
   console.log("Nova kombinacija: " + kombinacija + "\n--------------------------");
+  ispisi();
 }
 
 // Stavljamo event listener na dugme

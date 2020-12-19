@@ -55,6 +55,7 @@ header, .forma{
 
 .todo{
     margin: 0.5rem;
+    cursor: pointer;
     background: white;
     color: black;
     font-size: 1.5rem;
