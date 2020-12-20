@@ -103,7 +103,7 @@ function oceni(kombinacija, pokusaj) {
   
   console.log("Kombinacija:\t" + kombinacija + "\nPokusaj:\t\t" + pokusaj + "\nBr pokusaja:\t" + br_pokusaja + "\nPreostali pokusaji:\t" + (max_br_pokusaja-br_pokusaja));
 
-
+  upisiUTabelu(pokusaj, crni, beli, br_pokusaja-1);
   ispisi();
 }
 
@@ -123,6 +123,52 @@ function ispisi() {
   document.getElementById("preostali_pokusaji").innerHTML = "Preostali broj pokusaja: " + (max_br_pokusaja-br_pokusaja);
   document.getElementById("crni").innerHTML = "Crni: " + crni;
   document.getElementById("beli").innerHTML = "Beli: " + beli;
+}
+
+
+
+function upisiUTabelu(pokusaj, crni, beli, red){
+  // Ispis prethodnog pokusaja
+  for(let kolona = 0; kolona < 4; kolona++){
+    // Selektujemo odgovarajuce polje za zadati red, i tako celiju po celiju (kolonu po kolonu)
+    let polje = document.getElementById("pokusaj-polje-" + red + "-" + kolona);
+    // Menjamo boju polja u odgovarajucu
+    switch(pokusaj[kolona]){
+      case 1: polje.style.background = "#ff7777"; break;
+      case 2: polje.style.background = "#ffff77"; break;
+      case 3: polje.style.background = "#7777ff"; break;
+      case 4: polje.style.background = "#77ff77"; break;
+      case 5: polje.style.background = "#ffaa44"; break;
+      case 6: polje.style.background = "#ff77ff"; break;
+      default: polje.style.background = "white"; break;
+    }
+  }
+  //Ispis crnih i belih pogodaka
+  let i = 0;  // Prati dokle smo stigli sa upisom
+  // Upisuje crne pogotke
+  for(let br_crnih = 0; br_crnih < crni; br_crnih++){
+    let polje = document.getElementById("resenje-polje-" + red + "-" + i);
+    polje.style.backgroundColor = "red";
+    i++;
+  }
+  // Upisuje bele pogotke
+  for(let br_belih = 0; br_belih < beli; br_belih++){
+    let polje = document.getElementById("resenje-polje-" + red + "-" + i);
+    polje.style.backgroundColor = "yellow";
+    i++;
+  }
+}
+
+
+function izbrisiTabelu(){
+  for(let red = 0; red < max_br_pokusaja; red++){
+    for(let kolona = 0; kolona < 4; kolona++){
+      let polje_pokusaj = document.getElementById("pokusaj-polje-" + red + "-" + kolona);
+      let polje_resenje = document.getElementById("resenje-polje-" + red + "-" + kolona);
+      polje_pokusaj.style.backgroundColor = "white";
+      polje_resenje.style.backgroundColor = "#777777";
+    }
+  }
 }
 
 function nacrtajPolja(){
@@ -146,11 +192,13 @@ function nacrtajPolja(){
       // Kreira polja od pokusaja i dodaje ih na div_pokusaj
       let div_pokusaj_polje = document.createElement("div");
       div_pokusaj_polje.classList.add("pokusaj-polje");
+      div_pokusaj_polje.id = "pokusaj-polje-" + i + "-" + j;
       div_pokusaj.appendChild(div_pokusaj_polje);
 
       // Kreira polja od resenja i dodaje ih na div_resenje
       let div_resenje_polje = document.createElement("div");
       div_resenje_polje.classList.add("resenje-polje");
+      div_resenje_polje.id = "resenje-polje-" + i + "-" + j;
       div_resenje.appendChild(div_resenje_polje);
     }
     // Nakon sto smo kreirali div_pokusaj i div_resenje, dodajemo ih kao decu na div_red
@@ -175,6 +223,8 @@ function novaKombinacija() {
   for (i = 1; i < 5; i++){
     document.getElementById("dgm_p" + i).style.background = "#777777";
   }
+  // Brisemo tabelu
+  izbrisiTabelu();
 
   for (i = 0; i < 4; i++) {
     kombinacija[i] = Math.floor(((Math.random() * 1000) % 6) + 1);
