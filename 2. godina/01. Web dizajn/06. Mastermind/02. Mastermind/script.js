@@ -215,11 +215,14 @@ function novaKombinacija() {
   br_pokusaja = 0;
   crni = 0;
   beli = 0;
+  
   // Sakrivamo dugme NOVA KOMBINACIJA i pokazujem dugme OCENJIVANJE
   document.getElementById("nova-kombinacija").style.display = "none";
   document.getElementById("oceni").style.display = "block";
   // Pravi novu kombinaciju i sakriva prethodnu dobitnu
   document.getElementById("sakriven_red").style.display = "none";
+  // Postavljamo pokusaj na 0
+  pokusaj = [0, 0, 0, 0];
   for (i = 1; i < 5; i++){
     document.getElementById("dgm_p" + i).style.background = "#777777";
   }
