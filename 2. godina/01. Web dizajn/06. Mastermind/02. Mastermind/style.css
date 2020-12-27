@@ -13,6 +13,13 @@ body{
     align-items: center;
 }
 
+#igra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 button{
     display: block;
     margin: 15px 0px;   /* gore/dole levo/desno */
@@ -58,7 +65,7 @@ button{
 }
 
 #tabela{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .red{
@@ -86,4 +93,18 @@ button{
     align-items: center;
     justify-content: center;
 
+}
+
+#progress-bar{
+    width: 300px;
+    height: 20px;
+    margin-bottom: 20px;
+    background-color: #EEEEEE;
+}
+
+#progress-step{
+    background-color: green;
+    width: 0px;
+    height: 100%;
+    transition: all 0.5s ease-in;
 }

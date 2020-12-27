@@ -12,9 +12,7 @@ var confetti = {
 	togglePause: null,	//call to toggle whether the confetti animation is paused
 	remove: null,		//call to stop the confetti animation and remove all confetti immediately
 	isPaused: null,		//call and returns true or false depending on whether the confetti animation is paused
-    isRunning: null,		//call and returns true or false depending on whether the animation is running
-    snow: false         // snow = false     - padaju konfete, 
-                        // snow = true      - pada sneg
+	isRunning: null		//call and returns true or false depending on whether the animation is running
 };
 
 (function() {
@@ -28,8 +26,7 @@ var confetti = {
 	confetti.remove = removeConfetti;
 	confetti.isRunning = isConfettiRunning;
 	var supportsAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
-    var colors = ["rgba(30,144,255,", "rgba(107,142,35,", "rgba(255,215,0,", "rgba(255,192,203,", "rgba(106,90,205,", "rgba(173,216,230,", "rgba(238,130,238,", "rgba(152,251,152,", "rgba(70,130,180,", "rgba(244,164,96,", "rgba(210,105,30,", "rgba(220,20,60,"];
-    var snowColors = ["rgba(255,255,255,", "rgba(243,243,243,", "rgba(209,230,242", "rgba(213,240,255,"]
+	var colors = ["rgba(30,144,255,", "rgba(107,142,35,", "rgba(255,215,0,", "rgba(255,192,203,", "rgba(106,90,205,", "rgba(173,216,230,", "rgba(238,130,238,", "rgba(152,251,152,", "rgba(70,130,180,", "rgba(244,164,96,", "rgba(210,105,30,", "rgba(220,20,60,"];
 	var streamingConfetti = false;
 	var animationTimer = null;
 	var pause = false;
@@ -40,9 +37,7 @@ var confetti = {
 
 	function resetParticle(particle, width, height) {
 		particle.color = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
-        particle.color2 = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
-        particle.colorSnow = snowColors[(Math.random() * snowColors.length) | 0] + (confetti.alpha + ")");
-
+		particle.color2 = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
 		particle.x = Math.random() * width;
 		particle.y = Math.random() * height - height;
 		particle.diameter = Math.random() * 10 + 5;
@@ -178,23 +173,12 @@ var confetti = {
 			x = x2 + particle.diameter / 2;
 			y2 = particle.y + particle.tilt + particle.diameter / 2;
 			if (confetti.gradient) {
-                // Ako ima gradijent, onda ga pravi i dodeljuej tu boju za crtanje
 				var gradient = context.createLinearGradient(x, particle.y, x2, y2);
 				gradient.addColorStop("0", particle.color);
-                gradient.addColorStop("1.0", particle.color2);
-                // Crta boju za napravljen gradijent
+				gradient.addColorStop("1.0", particle.color2);
 				context.strokeStyle = gradient;
-			} else {
-                // Koristi niz boja koji je zadat za confetti
-                if(confetti.snow == false){
-                    // Padaju konfete
-                    context.strokeStyle = particle.color;
-                } else {
-                    // Pada sneg
-                    context.strokeStyle = particle.colorSnow;
-                }
-
-            }
+			} else
+				context.strokeStyle = particle.color;
 			context.moveTo(x, particle.y);
 			context.lineTo(x2, y2);
 			context.stroke();
@@ -227,44 +211,3 @@ var confetti = {
 		}
 	}
 })();
-
-
-
-// -----------------------------------------------------------------
-
-// Pocinje da pada sneg
-confetti.snow = true;
-confetti.start();
-
-
-const vreme = document.getElementById("timer");
-const nova_godina = new Date(2020, 11, 27, 21, 19, 50, 0).getTime();
-
-function dohvatiTrenutnoVreme(){
-    let trenutno_vreme = new Date().getTime();
-    let do_nove_godine = nova_godina - trenutno_vreme; // u milisekundama
-
-    // Stigli smo do nove godine!
-    if(do_nove_godine <= 0){
-        confetti.stop();
-        confetti.snow = false;
-        confetti.start(60000, 500, 100);
-        vreme.innerHTML = "SREĆNA NOVA 2021. GODINA!"
-        clearInterval(timer_interval);
-        return
-    }
-
-    // Izracunavamo dane, sate, minute, sekunde
-    let dani = Math.floor(do_nove_godine / (1000 * 60 * 60 * 24));
-    let sati = Math.floor((do_nove_godine % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minuti = Math.floor((do_nove_godine % (1000 * 60 * 60)) / (1000 * 60));
-    let sekundi = Math.floor((do_nove_godine % (1000 * 60)) / 1000);
-    
-    // Ispis u paragraf
-    vreme.innerHTML = dani + "d " + sati + "h " + minuti + "m " + sekundi + "s";
-
-}
-
-// Pozivamo funkciju jednom da se izvrsi pri ucitavanju stranice i postavljamo interval za izvrsavanje
-dohvatiTrenutnoVreme();
-const timer_interval = setInterval(dohvatiTrenutnoVreme, 1000);

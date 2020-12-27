@@ -8,6 +8,12 @@ let prebrojavanje = [0, 0, 0, 0, 0, 0];
 let br_pokusaja = 0;
 let max_br_pokusaja = 6;
 
+// Interval za progress bar
+let step_interval;
+const step = document.getElementById("progress-step")
+
+
+
 // Postavljamo pocetno stanje pri ucitavanju js-a
 nacrtajPolja();
 ispisi();
@@ -57,8 +63,26 @@ function promena(tip, k){
       default: dgm.style.background = "#777777"; break;
     }
   }
-
 }
+
+function kreniProgress(){
+  let width = 0;
+  step_interval = setInterval(progressStep, 1000)
+  function progressStep(){
+      if (width == 100){
+        // Isteklo vreme, prikazi tacan odgovor, stopiraj tajmer
+          clearInterval(step_interval);
+          document.getElementById("sakriven_red").style.display = "flex";
+          document.getElementById("oceni").style.display = "none";
+          document.getElementById("nova-kombinacija").style.display = "block";
+      } else {
+          width++;
+          step.style.width = width + "%";
+          // console.log(width);
+      }
+  }
+}
+
 
 function oceni(kombinacija, pokusaj) {
   br_pokusaja++;
@@ -90,13 +114,18 @@ function oceni(kombinacija, pokusaj) {
 
   // Dobitni pogodak, pokazuje resenu kombinaciju
   if(crni == 4){
+    // Stopiramo timer
+    clearInterval(step_interval);
+    document.getElementById("sakriven_red").style.display = "flex";
     document.getElementById("oceni").style.display = "none";
     document.getElementById("nova-kombinacija").style.display = "block";
-    document.getElementById("sakriven_red").style.display = "flex";
   }
 
   // Skidam dugme kada se premasi dozvoljeni broj pokusaja
   if(br_pokusaja >= max_br_pokusaja){
+    // Stopiramo timer
+    clearInterval(step_interval);
+    document.getElementById("sakriven_red").style.display = "flex";
     document.getElementById("oceni").style.display = "none";
     document.getElementById("nova-kombinacija").style.display = "block";
   }
@@ -228,13 +257,18 @@ function novaKombinacija() {
   }
   // Brisemo tabelu
   izbrisiTabelu();
+  // Resetujemo timer
+  step.style.width = "0%";
 
   for (i = 0; i < 4; i++) {
     kombinacija[i] = Math.floor(((Math.random() * 1000) % 6) + 1);
     promena("k", i+1);
   }
 
-  console.log("Nova kombinacija: " + kombinacija + "\n--------------------------");
+  // Krecemo timer
+  kreniProgress();
+
+  // console.log("Nova kombinacija: " + kombinacija + "\n--------------------------");
   ispisi();
 }
 
