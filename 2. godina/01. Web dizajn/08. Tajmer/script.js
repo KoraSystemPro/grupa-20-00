@@ -108,7 +108,7 @@ var confetti = {
 		if (canvas === null) {
 			canvas = document.createElement("canvas");
 			canvas.setAttribute("id", "confetti-canvas");
-			canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;position:fixed;top:0");
+			canvas.setAttribute("style", "display:block;z-index:9;pointer-events:none;position:fixed;top:0");
 			document.body.prepend(canvas);
 			canvas.width = width;
 			canvas.height = height;
@@ -236,9 +236,42 @@ var confetti = {
 confetti.snow = true;
 confetti.start();
 
+var br_overlaja = 1;
+let promena_gradijenta_timer = setInterval(promeniGradijent, 20000);
+function promeniGradijent(){
+	var formirani_gradijent;
+	function generisiGradijent(){
+		let gradijent = "";
+		gradijent = "rgba("  
+		let alpha = 0.3;
+		for(let i = 0; i < 3; i++){
+			let rgb = Math.floor((Math.random()*10000) % 256 - 1);
+			gradijent += rgb + ",";
+		}
+		gradijent += alpha + ")";
+		return gradijent;
+	}
+
+	let ugao = Math.floor(((Math.random() * 10000) % 361 - 1)) + "deg";
+	formirani_gradijent = "linear-gradient(" + ugao + "," + generisiGradijent() + "," + generisiGradijent() + ")";
+
+	if(br_overlaja == 1){
+		document.getElementById("overlay" + 1).style.backgroundImage = formirani_gradijent;
+		document.getElementById("overlay" + 2).style.opacity = 0;
+		document.getElementById("overlay" + 1).style.opacity = 1;
+		br_overlaja = 2;
+	} else if (br_overlaja == 3){
+		document.getElementById("overlay" + 2).style.backgroundImage = formirani_gradijent;
+		document.getElementById("overlay" + 1).style.opacity = 0;
+		document.getElementById("overlay" + 2).style.opacity = 1;
+		br_overlaja = 1;
+	} else {
+		br_overlaja = 3;
+	}
+}
 
 const vreme = document.getElementById("timer");
-const nova_godina = new Date(2020, 11, 27, 21, 19, 50, 0).getTime();
+const nova_godina = new Date(2021, 0, 1, 0, 0, 0, 0).getTime();
 
 function dohvatiTrenutnoVreme(){
     let trenutno_vreme = new Date().getTime();
@@ -246,10 +279,12 @@ function dohvatiTrenutnoVreme(){
 
     // Stigli smo do nove godine!
     if(do_nove_godine <= 0){
+		document.getElementById("timer").style.fontSize = "15em";
         confetti.stop();
         confetti.snow = false;
         confetti.start(60000, 500, 100);
         vreme.innerHTML = "SREĆNA NOVA 2021. GODINA!"
+        // vreme.innerHTML = "СРЕЋНА НОВА 2021. ГОДИНА!"
         clearInterval(timer_interval);
         return
     }
@@ -260,10 +295,40 @@ function dohvatiTrenutnoVreme(){
     let minuti = Math.floor((do_nove_godine % (1000 * 60 * 60)) / (1000 * 60));
     let sekundi = Math.floor((do_nove_godine % (1000 * 60)) / 1000);
     
-    // Ispis u paragraf
-    vreme.innerHTML = dani + "d " + sati + "h " + minuti + "m " + sekundi + "s";
+	// Ispis u paragraf
+	let t_d = "d ";
+	let t_h = "h ";
+	let t_m = "m ";
+	let t_s = "s ";
+ 	if(dani > 0){
+		// d h m s
+		vreme.innerHTML = dani + t_d + sati + t_h + minuti + t_m + sekundi + t_s;
+	} else if (dani == 0 && sati > 0){
+		// h m s
+		vreme.innerHTML = sati + t_h + minuti + t_m + sekundi + t_s;
+		document.getElementById("timer").style.fontSize = "13em";
+	} else if (dani == 0 && sati == 0 && minuti > 0){
+		// m s
+		vreme.innerHTML = minuti + t_m + sekundi + t_s;
+		document.getElementById("timer").style.fontSize = "20em";
+	} else {
+		vreme.innerHTML = sekundi;
+		document.getElementById("timer").style.fontSize = "50em";
+
+	}
 
 }
+
+// // Kursor animacija
+// let kursor_div = document.querySelector(".cursor");
+// window.addEventListener('mousemove', kursor);;
+// // Pomeraj za kurosor na stranici
+// function kursor(pomeraj){
+// 	kursor_div.style.top = pomeraj.pageY + "px";
+// 	kursor_div.style.left = pomeraj.pageX + "px";
+// }
+
+
 
 // Pozivamo funkciju jednom da se izvrsi pri ucitavanju stranice i postavljamo interval za izvrsavanje
 dohvatiTrenutnoVreme();
