@@ -1,0 +1,10 @@
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\bin\Debug\Uvod.exe.config
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\bin\Debug\Uvod.exe
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\bin\Debug\Uvod.pdb
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\obj\Debug\Uvod.csprojAssemblyReference.cache
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\obj\Debug\Uvod.Form1.resources
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\obj\Debug\Uvod.Properties.Resources.resources
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\obj\Debug\Uvod.csproj.GenerateResource.cache
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\obj\Debug\Uvod.csproj.CoreCompileInputs.cache
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\obj\Debug\Uvod.exe
+C:\Users\lukak\Documents\SystemPro\GitHub\grupa-20-00\2. godina\03. C#\Uvod\Uvod\obj\Debug\Uvod.pdb
