@@ -1,0 +1,6 @@
+/home/kora/Documents/SystemPro/GitHub/grupa-20-00/2. godina/03. C#/02. Vezba/Vezbanje/Vezbanje/bin/Debug/Vezbanje.exe
+/home/kora/Documents/SystemPro/GitHub/grupa-20-00/2. godina/03. C#/02. Vezba/Vezbanje/Vezbanje/bin/Debug/Vezbanje.pdb
+/home/kora/Documents/SystemPro/GitHub/grupa-20-00/2. godina/03. C#/02. Vezba/Vezbanje/Vezbanje/obj/x86/Debug/Vezbanje.csprojAssemblyReference.cache
+/home/kora/Documents/SystemPro/GitHub/grupa-20-00/2. godina/03. C#/02. Vezba/Vezbanje/Vezbanje/obj/x86/Debug/Vezbanje.csproj.CoreCompileInputs.cache
+/home/kora/Documents/SystemPro/GitHub/grupa-20-00/2. godina/03. C#/02. Vezba/Vezbanje/Vezbanje/obj/x86/Debug/Vezbanje.exe
+/home/kora/Documents/SystemPro/GitHub/grupa-20-00/2. godina/03. C#/02. Vezba/Vezbanje/Vezbanje/obj/x86/Debug/Vezbanje.pdb
