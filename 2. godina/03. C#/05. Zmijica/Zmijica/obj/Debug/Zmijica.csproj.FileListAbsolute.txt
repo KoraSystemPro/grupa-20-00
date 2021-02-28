@@ -1,0 +1,6 @@
+E:\20-10\Zmijica\Zmijica\bin\Debug\Zmijica.exe.config
+E:\20-10\Zmijica\Zmijica\bin\Debug\Zmijica.exe
+E:\20-10\Zmijica\Zmijica\bin\Debug\Zmijica.pdb
+E:\20-10\Zmijica\Zmijica\obj\Debug\Zmijica.csprojResolveAssemblyReference.cache
+E:\20-10\Zmijica\Zmijica\obj\Debug\Zmijica.exe
+E:\20-10\Zmijica\Zmijica\obj\Debug\Zmijica.pdb
