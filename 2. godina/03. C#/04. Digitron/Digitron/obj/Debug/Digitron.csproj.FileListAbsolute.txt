@@ -1,0 +1,9 @@
+E:\20-10\Digitron\Digitron\bin\Debug\Digitron.exe.config
+E:\20-10\Digitron\Digitron\bin\Debug\Digitron.exe
+E:\20-10\Digitron\Digitron\bin\Debug\Digitron.pdb
+E:\20-10\Digitron\Digitron\obj\Debug\Digitron.csprojResolveAssemblyReference.cache
+E:\20-10\Digitron\Digitron\obj\Debug\Digitron.Form1.resources
+E:\20-10\Digitron\Digitron\obj\Debug\Digitron.Properties.Resources.resources
+E:\20-10\Digitron\Digitron\obj\Debug\Digitron.csproj.GenerateResource.Cache
+E:\20-10\Digitron\Digitron\obj\Debug\Digitron.exe
+E:\20-10\Digitron\Digitron\obj\Debug\Digitron.pdb
