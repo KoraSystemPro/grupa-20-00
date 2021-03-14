@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Zmijica
@@ -34,6 +35,9 @@ namespace Zmijica
             List<int> teloY = new List<int>();
             int vockaX = nasumicanBroj.Next(1, prozorSirina-1);
             int vockaY = nasumicanBroj.Next(1, prozorVisina-1);
+
+            DateTime timer = DateTime.Now;
+            DateTime poolingInterval = DateTime.Now;
 
 
             int gameover = 0;
@@ -73,6 +77,7 @@ namespace Zmijica
                     Console.Write('▄');
                 }
 
+                Console.ForegroundColor = ConsoleColor.Red;
                 // Ako pokupimo vocku, uvecavamo skor i pravimo novu
                 if(vockaX == glavaX && vockaY == glavaY)
                 {
@@ -90,8 +95,17 @@ namespace Zmijica
                     break;
                 }
 
-                Console.ReadKey();
-
+                timer = DateTime.Now;
+                // Menjanje smera
+                while (true)
+                {
+                    poolingInterval = DateTime.Now;
+                    if(poolingInterval.Subtract(timer).TotalMilliseconds > 500)
+                    {
+                        break;
+                    }
+                    if(Console)
+                }
 
                 switch (smer)
                 {
