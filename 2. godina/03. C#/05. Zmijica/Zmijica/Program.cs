@@ -169,7 +169,6 @@ namespace Zmijica
                     teloY.RemoveAt(0);
 
                 }
-                Console.SetCursorPosition(0, 0);
             }
 
             Console.SetCursorPosition(prozorSirina / 5, prozorVisina / 2);
