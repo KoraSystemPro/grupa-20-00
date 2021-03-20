@@ -9,6 +9,68 @@ namespace Zmijica
 {
     class Program
     {
+        enum Smer
+        {
+            Gore, 
+            Dole, 
+            Levo,
+            Desno
+        }
+
+        static Smer promeni_smer(Smer smer_kretanja)
+        {
+            if (Console.KeyAvailable)
+            {
+                var dugme = Console.ReadKey(true).Key;
+                if (dugme == ConsoleKey.UpArrow && smer_kretanja != Smer.Dole)
+                {
+                    smer_kretanja = Smer.Gore;
+                }
+                else if (dugme == ConsoleKey.DownArrow && smer_kretanja != Smer.Gore)
+                {
+                    smer_kretanja = Smer.Dole;
+                }
+                else if (dugme == ConsoleKey.LeftArrow && smer_kretanja != Smer.Desno)
+                {
+                    smer_kretanja = Smer.Levo;
+                }
+                else if (dugme == ConsoleKey.RightArrow && smer_kretanja != Smer.Levo)
+                {
+                    smer_kretanja = Smer.Desno;
+                }
+            }
+        }
+        static void nacrtaj_piksel(int x, int y, ConsoleColor boja)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.ForegroundColor = boja;
+            Console.Write('█');
+        }
+
+        static void nacrtaj_ivice(int prozorSirina, int prozorVisina)
+        {
+            // Crta gornju ivicu
+            for (int i = 0; i < prozorSirina; i++)
+            {
+                nacrtaj_piksel(i, 0, ConsoleColor.White);
+            }
+            // Crta donju ivicu
+            for (int i = 0; i < prozorSirina; i++)
+            {
+                nacrtaj_piksel(i, prozorVisina - 1, ConsoleColor.White);
+            }
+            // Crta levu ivicu
+            for (int i = 0; i < prozorVisina; i++)
+            {
+                nacrtaj_piksel(0, i, ConsoleColor.White);
+            }
+            // Crta desnu ivicu
+            for (int i = 0; i < prozorVisina; i++)
+            {
+                nacrtaj_piksel(prozorSirina - 1, i, ConsoleColor.White);
+            }
+        }
+
         static void Main(string[] args)
         {
             // █ - 219
@@ -28,7 +90,7 @@ namespace Zmijica
             Console.WindowHeight = 17;
             Random nasumicanBroj = new Random();
             int score = 3;
-            string smer = "LEVO";
+            string smer_kretanja = "LEVO";
 
             int glavaX = prozorSirina / 2;
             int glavaY = prozorVisina / 2;
@@ -40,43 +102,23 @@ namespace Zmijica
             DateTime timer = DateTime.Now;
             DateTime poolingInterval = DateTime.Now;
 
-
+            
             int gameover = 0;
             while (true)
             {
                 // "Resetuje frejm"
                 Console.Clear();
 
+
+                nacrtaj_ivice(prozorSirina, prozorVisina);
+
                 // Proverava da li je zmija udarila u ivicu
-                if(glavaX == prozorSirina-1 || glavaX == 0 || glavaY == prozorVisina-1 || glavaY == 0)
+                if (glavaX == prozorSirina-1 || glavaX == 0 || glavaY == prozorVisina-1 || glavaY == 0)
                 {
                     gameover = 1;
                 }
 
-                // Crta gornju ivicu
-                for (int i = 0; i < prozorSirina; i++)
-                {
-                    Console.SetCursorPosition(i, 0);
-                    Console.Write('█');
-                }
-                // Crta donju ivicu
-                for (int i = 0; i < prozorSirina; i++)
-                {
-                    Console.SetCursorPosition(i, prozorVisina-1);
-                    Console.Write('█');
-                }
-                // Crta levu ivicu
-                for (int i = 0; i < prozorVisina; i++)
-                {
-                    Console.SetCursorPosition(0, i);
-                    Console.Write('█');
-                }
-                // Crta desnu ivicu
-                for (int i = 0; i < prozorVisina; i++)
-                {
-                    Console.SetCursorPosition(prozorSirina-1, i);
-                    Console.Write('█');
-                }
+               
 
                 // Ako pokupimo vocku, uvecavamo skor i pravimo novu
                 if(vockaX == glavaX && vockaY == glavaY)
@@ -88,23 +130,17 @@ namespace Zmijica
                 // Nacrtaj telo
                 for(int i = 0; i < teloX.Count(); i++)
                 {
-                    Console.SetCursorPosition(teloX[i], teloY[i]);
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write('█');
+                    nacrtaj_piksel(teloX[i], teloY[i], ConsoleColor.White);
                     if(teloX[i] == glavaX && teloY[i] == glavaY)
                     {
                         gameover = 1;
                     }
                 }
 
-                // Nacrtaj zmijicu
-                Console.SetCursorPosition(glavaX, glavaY);
-                Console.Write('█');
+                // Nacrtaj glavu
+                nacrtaj_piksel(glavaX, glavaY, ConsoleColor.White);
                 // Nacrtaj vocku
-                Console.SetCursorPosition(vockaX, vockaY);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write('█');
-                Console.ForegroundColor = ConsoleColor.White;
+                nacrtaj_piksel(vockaX, vockaY, ConsoleColor.Red);
                 // Napisi score
                 Console.SetCursorPosition(0, prozorVisina);
                 Console.Write("Score: " + score);
@@ -115,6 +151,7 @@ namespace Zmijica
                 }
 
                 double brzina = 500 - Math.Floor(1.5625 * Convert.ToDouble(score));
+
                 timer = DateTime.Now;
                 // Menjanje smera
                 while (true)
@@ -122,32 +159,17 @@ namespace Zmijica
                     poolingInterval = DateTime.Now;
                     if(poolingInterval.Subtract(timer).TotalMilliseconds > brzina)
                     {
+                        smer_kretanja = 
                         break;
                     }
-                    if (Console.KeyAvailable)
-                    {
-                        var dugme = Console.ReadKey(true).Key;
-                        if(dugme == ConsoleKey.UpArrow && smer != "DOLE")
-                        {
-                            smer = "GORE";
-                        } else if (dugme == ConsoleKey.DownArrow && smer != "GORE")
-                        {
-                            smer = "DOLE";
-                        } else if (dugme == ConsoleKey.LeftArrow && smer != "DESNO")
-                        {
-                            smer = "LEVO";
-                        } else if (dugme == ConsoleKey.RightArrow && smer != "LEVO")
-                        {
-                            smer = "DESNO";
-                        }
-                    }
+                    
                 }
 
                 // Update za telo
                 teloX.Add(glavaX);
                 teloY.Add(glavaY);
                 // Pomeramo glavu u zavisnosti od smera kretanja
-                switch (smer)
+                switch (smer_kretanja)
                 {
                     case "GORE":
                         glavaY--;
@@ -169,6 +191,7 @@ namespace Zmijica
                     teloY.RemoveAt(0);
 
                 }
+
             }
 
             Console.SetCursorPosition(prozorSirina / 5, prozorVisina / 2);
