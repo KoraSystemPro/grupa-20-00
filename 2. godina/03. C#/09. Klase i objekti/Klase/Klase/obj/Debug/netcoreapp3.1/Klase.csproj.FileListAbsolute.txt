@@ -1,0 +1,13 @@
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\bin\Debug\netcoreapp3.1\Klase.exe
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\bin\Debug\netcoreapp3.1\Klase.deps.json
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\bin\Debug\netcoreapp3.1\Klase.runtimeconfig.json
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\bin\Debug\netcoreapp3.1\Klase.runtimeconfig.dev.json
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\bin\Debug\netcoreapp3.1\Klase.dll
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\bin\Debug\netcoreapp3.1\Klase.pdb
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\obj\Debug\netcoreapp3.1\Klase.csprojAssemblyReference.cache
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\obj\Debug\netcoreapp3.1\Klase.csproj.CoreCompileInputs.cache
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\obj\Debug\netcoreapp3.1\Klase.AssemblyInfoInputs.cache
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\obj\Debug\netcoreapp3.1\Klase.AssemblyInfo.cs
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\obj\Debug\netcoreapp3.1\Klase.dll
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\obj\Debug\netcoreapp3.1\Klase.pdb
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Klase\Klase\obj\Debug\netcoreapp3.1\Klase.genruntimeconfig.cache

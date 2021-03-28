@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Globalization;
 
 namespace Vezbanje
@@ -205,9 +206,30 @@ namespace Vezbanje
             }
         }
 
+        static void PaskalovTrougao(int n)
+        {
+            int koef = 1;
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < i + 1; j++)
+                {
+                    if (j == 0)
+                    {
+                        koef = 1;
+                    }
+                    else
+                    {
+                        koef = koef * (i - j + 1) / j;
+                    }
+                    Console.Write(koef + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
         static void Main(string[] args)
         {
-            NacrtajPiramiduZvezdica(5);
+            PaskalovTrougao(8);
             
 
             Console.ReadKey();
