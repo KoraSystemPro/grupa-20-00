@@ -1,0 +1,10 @@
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\bin\Debug\Banka.exe.config
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\bin\Debug\Banka.exe
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\bin\Debug\Banka.pdb
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\obj\Debug\Banka.csprojAssemblyReference.cache
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\obj\Debug\Banka.Form1.resources
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\obj\Debug\Banka.Properties.Resources.resources
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\obj\Debug\Banka.csproj.GenerateResource.cache
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\obj\Debug\Banka.csproj.CoreCompileInputs.cache
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\obj\Debug\Banka.exe
+E:\User\Documents\GitHub\grupa-20-00\2. godina\03. C#\09. Klase i objekti\Banka\Banka\Banka\obj\Debug\Banka.pdb

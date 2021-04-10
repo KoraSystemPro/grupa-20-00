@@ -112,40 +112,5 @@ namespace Banka
             textBox6.Visible = false;
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            uint account = Convert.ToUInt32(textBox1.Text);
-            string name = textBox2.Text;
-            string surname = textBox3.Text;
-            double amount = Convert.ToDouble(textBox4.Text);
-
-            Racun osoba1 = new Racun(account, name, surname, amount);
-            osoba1.UpitStanja();
-
-            if (radioButton1.Checked == true)
-            {
-                osoba1.Uplati(Convert.ToDouble(textBox4.Text));
-                osoba1.UpitStanja();
-            } 
-            else if (radioButton2.Checked == true)
-            {
-                osoba1.Isplati(Convert.ToDouble(textBox4.Text));
-            }
-            else if (radioButton3.Checked == true)
-            {
-
-            }
-            else if (radioButton4.Checked == true)
-            {
-
-            }
-            else if (groupBox1.Visible == false)
-            {
-
-            }
-
-
-        }
     }
 }
