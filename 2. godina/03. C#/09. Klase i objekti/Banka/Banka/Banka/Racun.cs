@@ -10,7 +10,7 @@ namespace Banka
     class Racun
     {
         // Svojstva
-        uint brojRacuna = 0;
+        public uint brojRacuna = 0;
         string ime;
         string prezime;
         double iznos = 0;
@@ -35,6 +35,7 @@ namespace Banka
         public void Uplati(double amount)
         {
             iznos = iznos + amount;
+            UpitStanja();
         }
 
         public void Isplati(double amount)

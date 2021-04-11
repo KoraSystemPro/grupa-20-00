@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -22,8 +23,14 @@ namespace Banka
             Application.Exit();
         }
 
+        // Globalne promenljive
+        bool PRAVI_RACUN = true;
+        List<Racun> racuni = new List<Racun>();
+
         private void pravljenjeRačunaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            PRAVI_RACUN = true;
+
             // Sakrivamo beskoristne elemente
             groupBox1.Visible = false;
             this.Size = new Size(310, 265);
@@ -33,11 +40,18 @@ namespace Banka
             textBox2.Visible = true;
             textBox3.Visible = true;
 
+            // Za transfer novca
+            label5.Visible = false;
+            textBox5.Visible = false;
+            textBox6.Visible = false;
+
 
         }
 
         private void operacijeSaRačunomToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            PRAVI_RACUN = false;
+
             // Otkrivamo elemente
             groupBox1.Visible = true;
             this.Size = new Size(310, 370);
@@ -120,30 +134,48 @@ namespace Banka
             string surname = textBox3.Text;
             double amount = Convert.ToDouble(textBox4.Text);
 
-            Racun osoba1 = new Racun(account, name, surname, amount);
-            osoba1.UpitStanja();
-
-            if (radioButton1.Checked == true)
+            
+            if(PRAVI_RACUN == true)
             {
-                osoba1.Uplati(Convert.ToDouble(textBox4.Text));
-                osoba1.UpitStanja();
-            } 
-            else if (radioButton2.Checked == true)
-            {
-                osoba1.Isplati(Convert.ToDouble(textBox4.Text));
+                Racun novi = new Racun(account, name, surname, amount);
+                racuni.Add(novi);
             }
-            else if (radioButton3.Checked == true)
+            else
             {
+                if (radioButton1.Checked == true)
+                {
+                    for(int i = 0; i < racuni.Count; i++)
+                    {
+                        // Ako smo nasli racun, izvrsavamo uplatu
+                        if(racuni[i].brojRacuna == account)
+                        {
+                            racuni[i].Uplati(amount);
+                        }
+                    }
+                }
+                else if (radioButton2.Checked == true)
+                {
+                    for (int i = 0; i < racuni.Count; i++)
+                    {
+                        // Ako smo nasli racun, izvrsavamo uplatu
+                        if (racuni[i].brojRacuna == account)
+                        {
+                            racuni[i].Isplati(amount);
+                        }
+                    }
+                }
+                else if (radioButton3.Checked == true)
+                {
 
-            }
-            else if (radioButton4.Checked == true)
-            {
+                }
+                else if (radioButton4.Checked == true)
+                {
 
+                }
             }
-            else if (groupBox1.Visible == false)
-            {
 
-            }
+            
+            
 
 
         }
