@@ -1,0 +1,6 @@
+E:\20-10\Liste\Liste\2\Vezba\Vezba\bin\Debug\Vezba.exe.config
+E:\20-10\Liste\Liste\2\Vezba\Vezba\bin\Debug\Vezba.exe
+E:\20-10\Liste\Liste\2\Vezba\Vezba\bin\Debug\Vezba.pdb
+E:\20-10\Liste\Liste\2\Vezba\Vezba\obj\Debug\Vezba.csprojResolveAssemblyReference.cache
+E:\20-10\Liste\Liste\2\Vezba\Vezba\obj\Debug\Vezba.exe
+E:\20-10\Liste\Liste\2\Vezba\Vezba\obj\Debug\Vezba.pdb
