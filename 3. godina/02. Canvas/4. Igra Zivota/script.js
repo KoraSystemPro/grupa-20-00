@@ -1,6 +1,8 @@
 var sirina = 500;
 var visina = 500;
-var kvadratic = 50;
+var redovi = 10;
+var kolone = 10;
+var kvadratic = sirina / kolone;
 var ctx;
 
 function napraviKanvas(width, height){
@@ -14,27 +16,78 @@ function napraviKanvas(width, height){
     return ctx;
 }
 
-function nacrtajMatricu(ctx){
+function nacrtajMatricu(ctx, matrica){
     // Farbam ceo kavnas crno
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, sirina, visina);
 
     // Farbanje kvadrat po kvadrat
     ctx.fillStyle = "white";
-    for(let i = 0; i < 10; i++){
-        for(let j = 0; j < 10; j++){
-            let y = i * kvadratic;
-            let x = j * kvadratic;
-
-            ctx.fillRect(x+1, y+1, kvadratic-2, kvadratic-2);
+    for(let i = 0; i < redovi; i++){
+        for(let j = 0; j < kolone; j++){
+            if(matrica[i][j] == 1){
+                let y = i * kvadratic;
+                let x = j * kvadratic;
+                ctx.fillRect(x+1, y+1, kvadratic-2, kvadratic-2);
+            }
 
         }
     }
 }
 
+function napravi2DNiz(brRedova, brKolona){
+    let matrica = new Array(brRedova);
+    for(let i = 0; i < brRedova; i++){
+        matrica[i] = new Array(brKolona);
+    }
+    return matrica;
+}
+
+function napraviNasumicnuIgru(matrica){
+    for(let i = 0; i < redovi; i++){
+        for(let j = 0; j < kolone; j++){
+            matrica[i][j] = Math.floor(Math.random()*1000) % 2;
+        }
+    }
+    return matrica;
+}
+
+function novaGeneracija(staraGen){
+    let novaGen = napravi2DNiz(redovi, kolone);
+    for(let i = 0; i < redovi; i++){
+        for(let j = 0; j < kolone; j++){
+            let brKomsija = prebrojKomsije(matrica, i, j);
+            let trenutnaCelija = staraGen[i][j];
+
+            // Trenutna celija je mrtva, ali ima 3 ziva suseda
+            // Postaje ziva u sledecoj generaciji 
+            if(trenutnaCelija == 0 && brKomsija == 3){
+                novaGen[i][j] = 1;
+            } 
+            // Trentuna ziva, i ima 2 ili 3 ziva suseda, prezivljava
+            // u sledecu generaciju
+            else if (trenutnaCelija == 1 && (brKomsija == 2 || brKomsija == 3)){
+                novaGen[i][j] = 1;
+            } 
+            // Preostali slucajevi
+            else {
+                novaGen[i][j] = 0;
+            }
+        }
+    }
+
+    return novaGen;
+}
+
 function main(){
     ctx = napraviKanvas(500, 500);
-    nacrtajMatricu(ctx);
+    let igra = napravi2DNiz(redovi, kolone);
+    igra = napraviNasumicnuIgru(igra);
+    nacrtajMatricu(ctx, igra);
+    console.log(igra);
+    
+    igra = novaGeneracija(igra);
+    console.log(igra);
 
 }
 
