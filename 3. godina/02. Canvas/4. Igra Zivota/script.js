@@ -1,7 +1,7 @@
 var sirina = 500;
 var visina = 500;
-var redovi = 10;
-var kolone = 10;
+var redovi = 20;
+var kolone = 20;
 var kvadratic = sirina / kolone;
 var ctx;
 
@@ -52,11 +52,36 @@ function napraviNasumicnuIgru(matrica){
     return matrica;
 }
 
+function prebrojKomsije(matrica, x, y){
+    let brZivihKomsija = 0;
+    // Cvrste ivice
+    // for(let p = -1; p <= 1; p++){
+    //     for(let q = -1; q <= 1; q++){
+    //         if(x+p > -1 && y+q> -1 && x+p < redovi && y+q < kolone)
+    //             brZivihKomsija += matrica[x+p][y+q];
+    //     }
+    // }
+    
+    // Spojene ivice
+    for(let p = -1; p <= 1; p++){
+        for(let q = -1; q <= 1; q++){
+            let red = (x + p + redovi) % redovi;
+            let col = (y + q + kolone) % kolone;
+            brZivihKomsija += matrica[red][col];
+        }
+    }
+    
+    brZivihKomsija -= matrica[x][y];
+    return brZivihKomsija;
+
+
+}
+
 function novaGeneracija(staraGen){
     let novaGen = napravi2DNiz(redovi, kolone);
     for(let i = 0; i < redovi; i++){
         for(let j = 0; j < kolone; j++){
-            let brKomsija = prebrojKomsije(matrica, i, j);
+            let brKomsija = prebrojKomsije(staraGen, i, j);
             let trenutnaCelija = staraGen[i][j];
 
             // Trenutna celija je mrtva, ali ima 3 ziva suseda
@@ -79,15 +104,19 @@ function novaGeneracija(staraGen){
     return novaGen;
 }
 
+function glavnaPetlja(igra){
+    nacrtajMatricu(ctx, igra);
+    igra = novaGeneracija(igra);
+    return igra;
+}
+
+
 function main(){
     ctx = napraviKanvas(500, 500);
     let igra = napravi2DNiz(redovi, kolone);
     igra = napraviNasumicnuIgru(igra);
-    nacrtajMatricu(ctx, igra);
-    console.log(igra);
+    setInterval(function(){igra = glavnaPetlja(igra)}, 100);
     
-    igra = novaGeneracija(igra);
-    console.log(igra);
 
 }
 
