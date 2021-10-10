@@ -106,6 +106,7 @@ function novaGeneracija(staraGen){
 
 function glavnaPetlja(igra){
     nacrtajMatricu(ctx, igra);
+    azurirajMatrijalIzKanvasa(document.getElementById("platno"));
     igra = novaGeneracija(igra);
     return igra;
 }
@@ -115,6 +116,8 @@ function main(){
     ctx = napraviKanvas(500, 500);
     let igra = napravi2DNiz(redovi, kolone);
     igra = napraviNasumicnuIgru(igra);
+
+    nacrtajScenu();
     setInterval(function(){igra = glavnaPetlja(igra)}, 100);
     
 
