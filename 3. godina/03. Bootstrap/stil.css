@@ -1,0 +1,12 @@
+body{
+    height: 200vh;
+}
+
+#navigacija{
+    position: fixed;
+    width: 100vw;
+}
+#pocetni-blok{
+    padding-top: 20vh;
+    background-color: teal;
+}
