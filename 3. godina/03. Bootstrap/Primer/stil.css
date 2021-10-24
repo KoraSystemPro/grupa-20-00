@@ -1,0 +1,44 @@
+#kont1 {
+    background-color: teal;
+    height: 100px;
+}
+#kont2 {
+    height: 200px;
+
+}
+.col {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    background-color: teal;
+}
+
+#sadrzajID{
+    height: 60vh;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    background-color: tomato;
+}
+#preporukaID{
+    height: 60vh;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    background-color: gray;
+}
+
+.knjiga{
+    height: 80vh;
+    background-color: hotpink;
+    border: 2px solid black;
+}
+
+.prelom {
+    height: 40vh;
+    background-color: lawngreen;
+    border: 2px solid black;
+}
