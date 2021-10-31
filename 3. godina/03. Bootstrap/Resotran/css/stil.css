@@ -1,0 +1,52 @@
+/* Pocetni deo */
+#hero {
+    width: 100vw;
+    height: 100vh;
+    text-shadow: black 3pt 4pt 5pt;
+    position: relative;
+
+}
+
+#hero-background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/krofna_back.jpeg);
+    background-size: cover;
+    filter: blur(5px); 
+    background-repeat: no-repeat;
+    
+}
+
+#hero .container{
+    padding-top: 40vh;
+    left: 40pt;
+    position: absolute;
+}
+
+#hero h1{
+    margin: 0;
+    font-size: 40pt;
+    font-weight: 700;
+    font-family: Verdana, sans-serif;
+    color: #7e3f8a;
+}
+#hero h1 span {
+    font-size: 50pt;
+    font-weight: 800;
+    font-family: Verdana, sans-serif;
+    color: #f44336;
+    text-decoration: underline;
+}
+
+#hero h2 {
+    font-size: 25pt;
+    color: #7e3f8a;
+
+}
+
+
+
+
+
+
