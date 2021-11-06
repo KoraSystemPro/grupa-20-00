@@ -28,7 +28,7 @@
     margin: 0;
     font-size: 40pt;
     font-weight: 700;
-    font-family: Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #7e3f8a;
 }
 #hero h1 span {
@@ -47,6 +47,46 @@
 
 
 
+
+/* O Nama */
+.o-nama{
+    background: url("../img/restoran.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 0;
+    position: relative;
+    color: white;
+
+}
+
+.o-nama .o-nama-slika{
+    position: relative;
+}
+
+.o-nama .o-nama-slika img{
+    max-width: 100%;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.o-nama .content h3{
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.o-nama .content ul{
+    list-style: none;
+    padding: 0;
+}
+
+.o-nama .content ul li{
+    padding-bottom: 10px;
+}
+.o-nama .content ul i{
+    color: #c79e58;
+    padding-right: 5px;
+    font-size: 20px;
+}
 
 
 
