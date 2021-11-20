@@ -90,6 +90,11 @@
 
 
 /* Zasto nas */
+.zasto-nas{
+    padding: 80px 0;
+    background-color: #c34a51;
+}
+
 .zasto-nas .box{
     padding: 50px 30px;
     background-color: rgb(32, 17, 1);
@@ -128,6 +133,43 @@
     color: rgb(32, 17, 1);
 }
 
-.zasto-nas .box:hover h4, .zasto-nas .box:hover p {
+.zasto-nas .box:hover h4, 
+.zasto-nas .box:hover p {
     color: white;
+}
+
+/* Meni sekcija */
+.meni #meni-filteri{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.meni #meni-filteri li{
+    display: block;
+    padding: 12px;
+    font-size: 13pt;
+    font-weight: 500;
+    
+}
+
+
+.meni .meni-item{
+    margin-top: 50px;
+}
+
+.meni .meni-slika{
+    width: 80px;
+    border-radius: 50%;
+    float: left;
+    border: 5px solid rgba(255, 255, 255, 0.2)
+}
+
+.meni .meni-sadrzaj{
+    margin-left: 80px;
+}
+
+.meni .meni-sadrzaj span::before{
+    content: "...........................";
 }
