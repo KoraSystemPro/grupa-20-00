@@ -14,7 +14,7 @@
     background-image: url(../img/krofna_back.jpeg);
     background-size: cover;
     filter: blur(5px); 
-    transform: scale(1.2);
+    transform: scale(1.3);
     background-repeat: no-repeat;
     
 }
@@ -277,21 +277,32 @@ section#specijaliteti{
 }
 
 /* Kontakt */
+.kontakt{
+    padding: 80px 0;
+    background-color: rgb(179, 91, 81);
+    color: white;
+}
+
+.kontakt .mapa{
+    margin-bottom: 50px;
+}
+
 .kontakt .info{
     width: 100%;
-    padding: 0;
+    padding-left: 10%;
 }
 
 .kontakt .info i{
     font-size: 20pt;
     width: 50px;
     height: 50px;
-    background-color: salmon;
+    background-color: white;
     float: left;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgb(179, 91, 81);
 }
 
 .kontakt .info h4{
@@ -299,12 +310,58 @@ section#specijaliteti{
     font-size: 18pt;
     font-weight: 500;
     margin-bottom: 10px;
-    color: rgb(32, 17, 1);
+    color: white;
 }
 
 .kontakt .info p{
     padding-left: 60px;
     margin-bottom: 15pt;
     font-size: 14pt;
-    color: rgb(53, 30, 5);
+    color: whitesmoke;
+}
+
+.kontakt .kontakt-forma{
+    width: 100%;
+    padding-right: 10%;
+}
+
+.kontakt .kontakt-forma input{
+    margin-bottom: 12pt;
+    /* border: 2px solid salmon; */
+    border-color: salmon;
+    height: 35pt;
+    color: rgb(179, 91, 81);
+}
+.kontakt .kontakt-forma textarea{
+    border-color: salmon;
+    color: rgb(179, 91, 81);
+    margin-bottom: 12pt;
+
+}
+
+.kontakt .kontakt-forma input:focus, .kontakt .kontakt-forma textarea:focus{
+    box-shadow: 3px 3px 3px salmon ;
+}
+
+.kontakt .kontakt-forma input::-webkit-input-placeholder, .kontakt .kontakt-forma textarea::-webkit-input-placeholder{
+    color: salmon;
+}
+
+.kontakt .kontakt-forma input::-moz-placeholder, .kontakt .kontakt-forma textarea::-moz-placeholder{
+    color: salmon;
+}
+
+.kontakt .kontakt-forma button{
+    background-color: salmon;
+    border: 0;
+    padding: 10px 35px;
+    color: white;
+    border-radius: 40px;
+}
+
+.kontakt .kontakt-forma .button-center{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
